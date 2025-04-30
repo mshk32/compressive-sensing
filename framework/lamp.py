@@ -60,7 +60,8 @@ def lamp(image_path: str,
 
     CR = metrics.CR(img, dct_rec)
     PSNR = metrics.PSNR(img, img_out)
-    return ImageCS(img_out, cr=CR, psnr=PSNR)
+    SSIM = metrics.SSIM(img, img_out)
+    return ImageCS(img_out, cr=CR, psnr=PSNR, ssim=SSIM)
 
 
 def lamp_reconstruction_block(y: np.ndarray,
